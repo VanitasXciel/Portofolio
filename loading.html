@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+  </head>
+  <body>
+    <style type="text/css" media="all">
+      @font-face {
+        font-family: 'nex';
+        src: url('/asset/font/nex.ttf');
+      }
+    </style>
+    <div id="app" style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    </div>
+  <script>
+    onload = function() {
+      let id = document.getElementById("app")
+      let loading = document.createElement("div")
+   //   let videoElement = document.createElement("video")
+      const nextPageUrl = '/index.html';
+      
+   //   videoElement.controls = true
+    //  videoElement.width = 300
+    //  videoElement.height = 156
+      
+    //  let source = document.createElement("source");
+    //  source.src = '/asset/Video/rusdi.mp4'
+  //    source.type = 'video/mp4'
+      
+   //   videoElement.appendChild(source)
+      
+      loading.textContent = "Loading"
+      loading.style.fontSize = "28px"
+      loading.style.fontFamily = "nex"
+   //   loading.appendChild(videoElement)
+      id.appendChild(loading)
+      
+     let loaded = setInterval(() => {
+    loading.textContent = loading.textContent + "."
+     }, 1000)
+      
+      
+      setTimeout(() => {
+        clearInterval(loaded)
+        window.location.href = nextPageUrl
+      }, 3000)
+    }
+    
+  </script>
+  </body>
+</html>
